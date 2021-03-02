@@ -1,7 +1,29 @@
 <h3>Timeline</h3>
 <p><%= notice %></p>
 <br>
-<table class="table">
+<div class="timeline">
+  <% @posts.each do |post| %>
+  <div class="post_block">
+    <figure>
+      <img src="" alt="icon">
+    </figure>
+    <div class="post_text">
+      <div class="user_name">
+        <%= 'Sak' %>
+      </div>
+      <div class="timestamp">
+        <%= post.created_at %>
+      </div>
+      <div class="text">
+        <%= post.content %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= link_to 'New Tweet', new_post_path, class: 'btn btn-default' %>
+
+<!-- <table class="table">
   <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
@@ -10,5 +32,4 @@
     <td><%= link_to 'delete', post_path(post.id), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
   </tr>
   <% end %>
-</table>
-<%= link_to 'New Tweet', new_post_path, class: 'btn btn-default' %>
+</table> -->
