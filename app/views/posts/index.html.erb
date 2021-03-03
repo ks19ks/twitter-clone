@@ -1,27 +1,35 @@
 <h3>Timeline</h3>
 <p><%= notice %></p>
-<br>
-<div class="timeline">
-  <% @posts.each do |post| %>
-  <div class="post_block">
-    <figure>
-      <img src="" alt="icon">
-    </figure>
-    <div class="post_text">
-      <div class="user_name">
-        <%= 'Sak' %>
-      </div>
-      <div class="timestamp">
-        <%= post.created_at %>
-      </div>
-      <div class="text">
-        <%= post.content %>
+<div class="main_container">
+  <div class="timeline">
+    <% @posts.each do |post| %>
+    <div class="post_block">
+      <figure>
+        <%= image_tag 'icon.png'%>
+      </figure>
+      <div class="post_text">
+        <div class="user_name">
+          <%= 'Sak' %>
+          <span class="user_id">@userid</span>
+        </div>
+        <div class="timestamp">
+          <%= post.created_at %>
+        </div>
+        <div class="text">
+          <%= post.content %>
+        </div>
+        <div class="edit_delete">
+          <span class="edit"><%= link_to 'edit', edit_post_path(post.id) %></span>
+          <span><%= link_to 'delete', post_path(post.id), method: :delete, data: { confirm: '本当に削除しますか？' } %></span>
+        </div>
       </div>
     </div>
+    <% end %>
+    <div class="new_post">
+      <%= link_to 'New post', new_post_path, class: 'btn btn-default' %>
+    </div>
   </div>
-  <% end %>
 </div>
-<%= link_to 'New Tweet', new_post_path, class: 'btn btn-default' %>
 
 <!-- <table class="table">
   <% @posts.each do |post| %>

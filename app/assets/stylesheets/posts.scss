@@ -26,23 +26,33 @@ footer {
 .footer p {
   margin: 17px 0;
 }
+.main_container {
+  position: relative;
+  height: 45em;
+}
 .timeline {
-  height: 500px;
+  height: 50rem;
+  width: 70%;
   overflow-y: scroll;
   border: solid 1px #eeeeee;
+  margin: auto;
   margin-bottom: 20px;
 }
 .timeline .post_block {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 5px;
+  padding: 0.6em;
   border-bottom: solid 1px #eeeeee;
 }
 .timeline .post_block figure {
   float: left;
   padding: 0;
   margin: 0;
-  width: 20px;
+  width: 10%;
+}
+.timeline .post_block figure img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 .timeline .post_text {
   margin: 0;
@@ -54,6 +64,10 @@ footer {
   font-weight: bold;
   text-align: left;
 }
+.timeline .post_text .user_name .user_id {
+  color: #8a9aa4;
+  margin-left: 10px;
+}
 .timeline .post_text .timestamp {
   position: absolute;
   top: 0;
@@ -64,4 +78,17 @@ footer {
 .timeline .post_text .text {
   margin: 5px 0;
   text-align: left;
+}
+.timeline .post_text .edit_delete {
+  text-align: right;
+}
+.timeline .post_text .edit_delete .edit {
+  margin-right: 5px;
+}
+.new_post {
+  position: absolute;
+  bottom: 11%;
+  left: 0;
+  right: 0;
+  margin-bottom: 5px;
 }
