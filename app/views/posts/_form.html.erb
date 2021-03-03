@@ -8,12 +8,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="input-group">
+    <%= form.text_field :content, class: 'form-control', placeholder: 'What are you up to?' %>
+    <span class="input-group-btn">
+      <% if action_name == 'new' %>
+        <%= form.submit 'Post!', class: 'btn btn-default' %>
+      <% elsif action_name == 'edit' %>
+        <%= form.submit 'Update!', class: 'btn btn-default' %>
+      <% end %>
+    </span>
   </div>
-  <br>
-  <%= form.submit %>
 <% end %>
 <br>
-<%= link_to 'Back to timeline', posts_path %>
+<%= link_to 'Back to Timeline', posts_path, class: 'btn btn-link' %>
