@@ -1,9 +1,9 @@
 <%= form_with(model: @post, local: true, url: choose_new_or_edit) do |form| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
-      <ul>
+      <ul class="list-group">
         <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+          <li class="list-group-item list-group-item-danger"><%= msg %></li>
         <% end %>
       </ul>
     </div>
