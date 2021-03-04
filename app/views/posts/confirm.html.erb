@@ -1,8 +1,13 @@
-<h3>Are you gonna post this?</h3>
+<div class="page-header">
+  <h3>Are you gonna post this?</h3>
+</div>
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>Content: <%= @post.content %></p>
-  <br>
-  <%= form.submit 'Post' %>
-  <%= form.submit 'Back', name: 'back' %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= @post.content %>
+    </div>
+  </div>
+  <%= form.submit 'Post', class: 'btn btn-default' %>
+  <%= form.submit 'Back', name: 'back', class: 'btn btn-default' %>
 <% end %>

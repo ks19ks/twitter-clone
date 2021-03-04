@@ -11,7 +11,7 @@
   <div class="input-group">
     <%= form.text_field :content, class: 'form-control', placeholder: 'What are you up to?' %>
     <span class="input-group-btn">
-      <% if action_name == 'new' %>
+      <% if action_name == 'new' || action_name == 'create' %>
         <%= form.submit 'Post!', class: 'btn btn-default' %>
       <% elsif action_name == 'edit' %>
         <%= form.submit 'Update!', class: 'btn btn-default' %>
